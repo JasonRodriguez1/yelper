@@ -1,0 +1,71 @@
+%social-icon {
+  display: block;
+  width: 36px;
+  height: 32px;
+  padding-top: 32px;
+  overflow: hidden;
+  background-color: rgba(75, 75, 75, 0.9);
+  background-position: center center;
+  background-repeat: no-repeat;
+  @include transition(background-color 500ms ease-in-out);
+  &:focus,
+  &:hover {
+    background-color: rgba(75, 75, 75, 0.5);
+  }
+}
+
+// Facebook
+%social-icon-facebook {
+  background-image: url(../../images/fb.png);
+}
+%social-icon-facebook-theme {
+  background-color: #3b5b99;
+  &:focus,
+  &:hover {
+    background-color: rgba(59, 91, 153, 0.8);
+  }
+}
+
+// Twitter
+%social-icon-twitter {
+  background-image: url(../../images/twitter.png);
+}
+%social-icon-twitter-theme {
+  background-color: #28aae1;
+  &:focus,
+  &:hover {
+    background-color: rgba(40, 170, 225, 0.8);
+  }
+}
+
+// Google Plus
+%social-icon-googleplus {
+  background-image: url(../../images/g+.png);
+}
+
+// YouTube
+%social-icon-youtube {
+  background-image: url(../../images/youtube.png);
+}
+
+// Pinterest
+%social-icon-pinterest {
+  background-image: url(../../images/pinterest.png);
+}
+%social-icon-pinterest-theme {
+  background-color: #cb2027;
+  &:focus,
+  &:hover {
+    background-color: rgba(203, 32, 39, 0.8);
+  }
+}
+
+// Instagram
+%social-icon-instagram {
+  background-image: url(../../images/instagram.png);
+}
+
+// Tumblr
+%social-icon-tumblr {
+  background-image: url(../../images/tumblr.png);
+}

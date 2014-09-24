@@ -1,0 +1,51 @@
+// Color Combinations
+%white-on-black {
+  @extend %background-color-black;
+  @extend %color-white;
+  a {
+    @extend %color-white;
+  }
+}
+%white-on-grey {
+  @extend %background-color-dark-grey;
+  @extend %color-white;
+  a {
+    @extend %color-white;
+  }
+}
+%grey-on-grey {
+  @extend %background-color-dark-grey;
+  @extend %color-grey;
+  a {
+    @extend %color-white;
+  }
+}
+
+%zebra-stripe {
+  &.odd,
+  &:nth-child(odd) {
+    background-color: $zebra-stripe-odd-bg-color;
+    color: $zebra-stripe-odd-text-color;
+  }
+  &.even,
+  &:nth-child(even) {
+    background-color: $zebra-stripe-even-bg-color;
+    color: $zebra-stripe-even-text-color;
+  }
+}
+
+%zebra-stripe-mid-tone {
+  &.odd {
+    background-color: $zebra-stripe-mid-tone-odd-bg-color;
+    color: $zebra-stripe-mid-tone-odd-text-color;
+  }
+  &.even {
+    background-color: $zebra-stripe-mid-tone-even-bg-color;
+    color: $zebra-stripe-mid-tone-even-text-color;
+  }
+}
+
+%zebra-stripe-mid-tone-exception {
+  background-color: $zebra-stripe-mid-tone-exception-bg-color;
+  color: $zebra-stripe-mid-tone-exception-text-color;
+}
