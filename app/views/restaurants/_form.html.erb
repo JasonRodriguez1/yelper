@@ -1,7 +1,8 @@
-<%= simple_form_for(@restaurant) do |f| %>
+<%= simple_form_for(@restaurant, :html => { multipart: true }) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone %>
   <%= f.input :website %>
+  <%= f.input :image %>
   <%= f.button :submit %>
 <% end %>
