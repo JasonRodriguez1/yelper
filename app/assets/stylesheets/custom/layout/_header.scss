@@ -1,15 +1,28 @@
 // Author: Jason Rodriguez
 /*** Header styles ***/
 .top-bar,
-.top-bar-section li:not(.has-form) a:not(.button):not(.submit)  {
+.top-bar-section li:not(.has-form) a:not(.button):not(.submit) {
   @extend %header-bg-color;
+  @extend %header-text-color;
 }
-.nav-links {
-position: relative;
-bottom: 0px;
+.top-bar-section li:not(.has-form) a:not(.button):not(.submit) {
+  @extend %padding-top-34;
+  @extend %line-height-1;
 }
 .top-bar-section li:not(.has-form) a:not(.button):not(.submit):hover {
   @extend %header-bg-hover;
 }
-
-/*** Start Header block styles ***/
+header .nav-links {
+  @extend %position-relative;
+  @extend %bottom-0;
+  .has-form {
+    @extend%top-25;
+    a {
+      @extend %height-auto;
+    }
+  }
+  li a {
+    @extend %height-85;
+    @extend %font-size-16;
+  }
+}
