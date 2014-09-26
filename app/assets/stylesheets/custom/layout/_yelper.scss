@@ -1,4 +1,28 @@
 // Author: Jason Rodriguez
 /*** Custom Yelper styles ***/
-
+#banner  {
+  @extend %orange-diamond-pattern;
+  @extend %border-radius-10px;
+  @extend %border-1-solid-orange;
+  @extend %margin-top-10;
+  @extend %top-0;
+  @extend %left-0;
+  @extend %right-0;
+  @extend %bottom-0;
+  @extend %width-50-percent;
+  @extend %height-200;
+  @extend %padding-10;
+  @extend %position-relative;
+  @extend %overflow-hidden;
+  h2 {
+    @extend %font-weight-bold;
+    @extend %banner-text-color;
+  }
+}
+// Will use media query to prevent text from being cut off
+.text-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* Firefox support */
+  position: absolute;
+}
 /*** Start Custom Yelper  styles ***/
