@@ -1,25 +1,38 @@
+// Author: Jason Rodriguez
+
 // import the CSS framework
 @import 'foundation';
 
 // override for the 'Home' navigation link
+.top-bar {
+  @extend %height-85;
+}
 .top-bar .name {
   font-size: rem-calc(13);
-  line-height: 45px;
+  @extend %line-height-2;
+  @extend %border-1-solid-black;
+  @extend %border-radius-15px;
+  @extend %margin-top-20;
+  @extend %margin-left-12;
+  @extend %orange-white-gradient;
+  a {
+    @extend %font-weight-bold;
+    @extend %color-black;
+    @extend %padding-top-bot-0-left-right-15;
+    @extend %background-none;
+    @extend %font-size-20;
+    @extend %text-shadow-white;
+  }
 }
-.top-bar .name a {
-  font-weight: normal;
-  color: white;
-  padding: 0 15px;
-  background: none;
+.top-bar .title-area {
+  @extend %height-100-percent;
 }
 .top-bar-section .has-form {
-  background: none;
-  position: relative;
-  top: 3px;
+  @extend %background-none;
+  @extend %position-relative;
 }
 .top-bar-section ul {
-display: inline-block;
-bottom: 20px;
+  @extend %display-inline-block;
 }
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
@@ -36,24 +49,23 @@ bottom: 20px;
 // to make views framework-neutral
 .column {
   @include six-columns-centered;
-  }
+}
 .form {
   @include grid-column(6);
-  }
+}
 .form-centered {
   @include six-columns-centered;
-  }
+}
 .submit {
   @extend .button;
   @extend .radius;
-  }
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #eee;
-  }
+  @extend %background-color-white;
+}
 section {
   @extend .row;
-  margin-top: 20px;
-  }
+}
