@@ -20,7 +20,7 @@
     @extend %color-white;
   }
 }
-
+// Foundation does this but I wanted to show how to do it manually
 %zebra-stripe {
   &.odd,
   &:nth-child(odd) {
@@ -44,8 +44,33 @@
     color: $zebra-stripe-mid-tone-even-text-color;
   }
 }
-
 %zebra-stripe-mid-tone-exception {
   background-color: $zebra-stripe-mid-tone-exception-bg-color;
   color: $zebra-stripe-mid-tone-exception-text-color;
+}
+%shaded-orange {
+  background-color: #EB7A00; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #EB7A00); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), #EB7A00); /* For Firefox (3.6 to 15) */
+  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #EB7A00); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom, #FFFFFF, #EB7A00); /* Standard syntax; must be last */
+}
+%orange-diamond-pattern {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAR0lEQVQYV2P8fnjVf07bMEYGKADxQUx0MbgCkCSyJnQDUExCNgVdI1ghuknIVsPkGHFZhy5OvEKirUYOFoKewaYYI3iIDXAA0Bhtl5i5wH4AAAAASUVORK5CYII=) repeat;
+}
+
+// Gradients
+%white-orange-gradient {
+  background-color: #FF9100; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #FF9100); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), #FF9100); /* For Firefox (3.6 to 15) */
+  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #FF9100); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom, #FFFFFF, #FF9100); /* Standard syntax; must be last */
+}
+%orange-white-gradient {
+  background-color: #FFE5D7; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #FFFFFF); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), #FFFFFF); /* For Firefox (3.6 to 15) */
+  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #FFFFFF); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom, #FF9100, #FFFFFF); /* Standard syntax; must be last */
 }
