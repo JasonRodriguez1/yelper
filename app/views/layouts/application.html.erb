@@ -15,10 +15,12 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= render 'layouts/banner' %>
-       <%= yield %>
-       <%= render 'layouts/footer' %>
+     <%= render 'layouts/messages' %>
+     <%= render 'layouts/banner' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+     <%= yield %>
+     <%= render 'layouts/footer' %>
     </main>
   </body>
 </html>
