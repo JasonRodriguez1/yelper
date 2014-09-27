@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -75,10 +76,16 @@ GEM
     compass-rails (2.0.0)
       compass (>= 0.12.2)
     debug_inspector (0.0.2)
+    devise (3.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     excon (0.39.6)
     execjs (2.2.1)
-    ffi (1.9.4)
+    ffi (1.9.5)
     figaro (1.0.0)
       thor (~> 0.14)
     fog (1.23.0)
@@ -107,7 +114,7 @@ GEM
     font-awesome-sass (4.2.0)
       sass (~> 3.2)
     formatador (0.2.5)
-    foundation-rails (5.4.4.0)
+    foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     high_voltage (2.2.1)
@@ -142,6 +149,7 @@ GEM
     net-ssh (2.9.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
@@ -211,6 +219,8 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     zurb-foundation (4.3.2)
       sass (>= 3.2.0)
 
@@ -225,6 +235,7 @@ DEPENDENCIES
   coffee-rails
   compass
   compass-rails
+  devise
   figaro
   fog
   font-awesome-sass
