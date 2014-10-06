@@ -1,27 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="large-8 columns">
+  <p id="notice"><%= notice %></p>
+  <%= image_tag @restaurant.image_url %>
+  <h2>
+    <%= @restaurant.name %>
+  </h2>
 
-<%= image_tag @restaurant.image_url %>
+  <p>
+    <strong>Address:</strong>
+    <%= @restaurant.address %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @restaurant.phone %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @restaurant.website %>
-</p>
-
-<%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
+  <p>
+    <strong>Website:</strong>
+    <%= link_to @restaurant.website, @restaurant.website %>
+  </p>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
 <%= link_to 'Back', restaurants_path %>
+</div>
+<div class="large-4 columns">
+  <% if @reviews.blank? %>
+    <h3>No reviews yet. Be the first to write one!</h3>
+  <% else %>
+    <% @reviews.each do |review| %>
+      <p><%= review.rating %></p>
+      <p><%= review.comment %></p>
+    <% end %>
+  <% end %>
+</div>
+<%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
