@@ -1,32 +1,85 @@
-<h1>Listing restaurants</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= link_to restaurant.website, restaurant.website %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
-<%= image_tag"https://s3-us-west-2.amazonaws.com/yelper/cityscape.png" %>
+<div class="large-12 columns">
+  Cool spots are all around, check them out!
+</div>
+<div class="large-8 columns">
+  <%= render 'layouts/banner' %>
+  <h1>Restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+    <div class="row">
+      <div class="large-4 columns">
+          <div class="homepage-img">
+            <p><%= image_tag restaurant.image %></p>
+          </div>
+      </div>
+      <div class="large-8 columns">
+          <ul class="restaurant-details">
+            <li><%= restaurant.name %></li>
+            <li><%= restaurant.address %></li>
+            <li><%= restaurant.phone %></li>
+            <li><%= link_to restaurant.website, restaurant.website %></li>
+          </ul>
+          <ul class="restaurant-edit">
+            <li><%= link_to 'Show', restaurant %></li>
+            <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+            <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+      </div>
+    </div>
+  <% end %>
+  <br>
+  <%= link_to 'New Restaurant', new_restaurant_path, :class => "tiny round button" %>
+</div>
+<div class="large-4 columns">
+    <h3>Sidebar Stuff</h3>
+    <h5>Lorem.</h5>
+    <ul>
+      <li><a href="">Lorem ipsum dolor.</a></li>
+      <li><a href="">Reiciendis doloremque, quo!</a></li>
+      <li><a href="">In, odit, totam.</a></li>
+      <li><a href="">Odit, recusandae. Minima!</a></li>
+      <li><a href="">Recusandae, provident magnam.</a></li>
+    </ul>
+    <h5>Lorem.</h5>
+    <ul>
+      <li><a href="">Lorem ipsum dolor.</a></li>
+      <li><a href="">Reiciendis doloremque, quo!</a></li>
+      <li><a href="">In, odit, totam.</a></li>
+      <li><a href="">Odit, recusandae. Minima!</a></li>
+      <li><a href="">Recusandae, provident magnam.</a></li>
+    </ul>
+    <h5>Lorem.</h5>
+    <ul>
+      <li><a href="">Lorem ipsum dolor.</a></li>
+      <li><a href="">Reiciendis doloremque, quo!</a></li>
+      <li><a href="">In, odit, totam.</a></li>
+      <li><a href="">Odit, recusandae. Minima!</a></li>
+      <li><a href="">Recusandae, provident magnam.</a></li>
+    </ul>
+    <h5>Lorem.</h5>
+    <ul>
+      <li><a href="">Lorem ipsum dolor.</a></li>
+      <li><a href="">Reiciendis doloremque, quo!</a></li>
+      <li><a href="">In, odit, totam.</a></li>
+      <li><a href="">Odit, recusandae. Minima!</a></li>
+      <li><a href="">Recusandae, provident magnam.</a></li>
+    </ul>
+    <h5>Lorem.</h5>
+    <ul>
+      <li><a href="">Lorem ipsum dolor.</a></li>
+      <li><a href="">Reiciendis doloremque, quo!</a></li>
+      <li><a href="">In, odit, totam.</a></li>
+      <li><a href="">Odit, recusandae. Minima!</a></li>
+      <li><a href="">Recusandae, provident magnam.</a></li>
+    </ul>
+    <h5>Lorem.</h5>
+    <ul>
+      <li><a href="">Lorem ipsum dolor.</a></li>
+      <li><a href="">Reiciendis doloremque, quo!</a></li>
+      <li><a href="">In, odit, totam.</a></li>
+      <li><a href="">Odit, recusandae. Minima!</a></li>
+      <li><a href="">Recusandae, provident magnam.</a></li>
+    </ul>
+</div>
+<div class="footer-img">
+  <%= image_tag"https://s3-us-west-2.amazonaws.com/yelper/cityscape.png" %>
+</div>
