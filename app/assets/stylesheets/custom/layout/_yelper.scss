@@ -1,9 +1,9 @@
 // Author: Jason Rodriguez
 /*** Custom Yelper styles ***/
 #banner  {
-  @extend %orange-diamond-pattern;
+  @extend %teal-diamond-pattern;
   @extend %border-radius-10px;
-  @extend %border-1-solid-orange;
+  @extend %border-1-solid-grey ;
   @extend %margin-top-10;
   @extend %top-0;
   @extend %left-0;
@@ -14,15 +14,38 @@
   @extend %padding-10;
   @extend %position-relative;
   @extend %overflow-hidden;
+  @extend %width-100-percent;
+  @extend %box-shadow-inset;
   h2 {
     @extend %font-weight-bold;
     @extend %banner-text-color;
+    text-align: center;
+  }
+  h3 {
+    color: red;
+    background-color: rgba(255, 255, 255, 0.66);
+    position: relative;
+    text-align: center;
+    right: 6px;
+    border-radius: 10px;
   }
 }
-// Will use media query to prevent text from being cut off
+
 .text-wrap {
   overflow-wrap: break-word;
   word-wrap: break-word; /* Firefox support */
   position: absolute;
 }
-/*** Start Custom Yelper  styles ***/
+.homepage-img {
+  margin-right: 12px;
+  img {
+    border-radius: 10px;
+  }
+}
+.restaurant-details, .restuarant-edit {
+  list-style-type: none;
+}
+.restaurant-edit li {
+  display: inline;
+  margin-right: 3px;
+}

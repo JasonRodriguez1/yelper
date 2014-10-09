@@ -1,38 +1,20 @@
 // Author: Jason Rodriguez
 
-// import the CSS framework
+// import the framework
 @import 'foundation';
-
-// override for the 'Home' navigation link
-.top-bar {
-  @extend %height-85;
+a {
+  color: $white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
 }
-.top-bar .name {
-  font-size: rem-calc(13);
-  @extend %line-height-2;
-  @extend %border-1-solid-black;
-  @extend %border-radius-15px;
-  @extend %margin-top-20;
-  @extend %margin-left-12;
-  @extend %orange-white-gradient;
-  a {
-    @extend %font-weight-bold;
-    @extend %color-black;
-    @extend %padding-top-bot-0-left-right-15;
-    @extend %background-none;
-    @extend %font-size-20;
-    @extend %text-shadow-white;
-  }
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
 }
-.top-bar .title-area {
-  @extend %height-100-percent;
-}
-.top-bar-section .has-form {
-  @extend %background-none;
-  @extend %position-relative;
-}
-.top-bar-section ul {
-  @extend %display-inline-block;
+body a:hover {
+  @extend %link-hover-color;
+  border-radius: 10px;
+  color: #465660;
 }
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
@@ -66,6 +48,12 @@ main {
   @include twelve-columns;
   @extend %background-color-white;
 }
-section {
-  @extend .row;
+.button, .top-bar-section ul li > a.button {
+  @extend %background-color-teal;
+}
+.button:hover, .top-bar-section ul li > a.button:hover {
+  @extend %hover-button;
+}
+.top-bar-section ul li > a.button {
+  margin-right: 3px;
 }
