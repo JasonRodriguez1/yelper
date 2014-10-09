@@ -23,6 +23,7 @@
   </p>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
 <%= link_to 'Back', restaurants_path %>
+<%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
 </div>
 <div class="large-4 columns panel">
   <% if @reviews.blank? %>
@@ -42,7 +43,6 @@
     </table>
   <% end %>
 </div>
-<%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
 </div>
 <script>
     $('.star-rating').raty({
