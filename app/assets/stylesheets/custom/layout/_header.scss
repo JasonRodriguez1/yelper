@@ -1,28 +1,56 @@
 // Author: Jason Rodriguez
 /*** Header styles ***/
-.top-bar,
-.top-bar-section li:not(.has-form) a:not(.button):not(.submit) {
-  @extend %header-bg-color;
-  @extend %header-text-color;
-}
-.top-bar-section li:not(.has-form) a:not(.button):not(.submit) {
-  @extend %padding-top-34;
-  @extend %line-height-1;
-}
-.top-bar-section li:not(.has-form) a:not(.button):not(.submit):hover {
-  @extend %header-bg-hover;
-}
-header .nav-links {
-  @extend %position-relative;
-  @extend %bottom-0;
-  .has-form {
-    @extend%top-25;
+.top-bar {
+  .title-area {
+    margin-right: 10px;
+  }
+  .name {
+    font-size: rem-calc(13);
     a {
-      @extend %height-auto;
+      background-color: transparent;
     }
   }
-  li a {
-    @extend %height-85;
-    @extend %font-size-16;
+  .row {
+    margin-top: 4px;
   }
+  .right {
+  position: relative;
+  right: 10px;
+    li {
+    margin-right: 10px;
+    margin-top: 5px;
+    }
+  }
+}
+.has-form {
+  .button {
+    margin-left: -16px;
+  }
+  input {
+    border-radius: 10px;
+  }
+}
+.top-bar, .top-bar-section .has-form, .top-bar-section ul li,
+.top-bar-section li:not(.has-form) a:not(.button):not(.submit),
+.nav-links li {
+  background-color: #92a1ad;
+}
+.title-area .name a {
+  @extend %text-shadow-black;
+  line-height: 2.7;
+  @extend %color-white;
+  margin-left: 6px;
+  font-size: 16px;
+}
+.top-bar-section {
+  .right li {
+    @extend %box-shadow-login;
+    @extend %border-radius-10px;
+  }
+  .has-form .row.collapse input, .has-form .row.collapse a {
+    @extend %box-shadow-search;
+  }
+}
+#main-nav-links li a:hover {
+  @extend %nav-hover-grey;
 }
