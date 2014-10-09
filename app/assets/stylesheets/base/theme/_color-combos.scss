@@ -13,13 +13,7 @@
     @extend %color-white;
   }
 }
-%grey-on-grey {
-  @extend %background-color-dark-grey;
-  @extend %color-grey;
-  a {
-    @extend %color-white;
-  }
-}
+
 // Foundation does this but I wanted to show how to do it manually
 %zebra-stripe {
   &.odd,
@@ -57,6 +51,9 @@
 }
 %orange-diamond-pattern {
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAR0lEQVQYV2P8fnjVf07bMEYGKADxQUx0MbgCkCSyJnQDUExCNgVdI1ghuknIVsPkGHFZhy5OvEKirUYOFoKewaYYI3iIDXAA0Bhtl5i5wH4AAAAASUVORK5CYII=) repeat;
+}
+%teal-diamond-pattern {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAWUlEQVQYV2Nk+H/4PwOjLSMDFExauPY/iJkXHwwXA6lBcICSIEUwBchskEYUXcgmgy1Asg2sEN0kZKthcozYFMHci+wM4hUSbTXMGvRgwuoZ5DDEHTxEBjgAtBtdS61P1kMAAAAASUVORK5CYII=) repeat;
 }
 
 // Gradients
