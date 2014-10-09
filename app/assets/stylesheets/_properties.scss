@@ -215,23 +215,19 @@
 %color-aqua {
   color: $aqua;
 }
-%color-grey {
-  color: $grey;
-}
-%color-light-grey {
-  color: $light-grey;
-}
-%color-mid-grey {
-  color: $mid-grey;
-}
+
 %color-dark-grey {
   color: $dark-grey;
 }
-
+%nav-hover-grey {
+  background-color: rgba(255, 255, 255, 0.24);
+}
 %text-color-primary {
   color: $primary-color;
 }
-
+%link-hover-color {
+  background-color: $hover-teal;
+}
 %header-bg-color {
   @extend %white-orange-gradient;
 }
@@ -253,14 +249,11 @@
 %background-color-aqua {
   background-color: $aqua;
 }
-%background-color-grey {
-  background-color: $grey;
+%background-color-teal {
+  background-color: $teal;
 }
-%background-color-light-grey {
-  background-color: $light-grey;
-}
-%background-color-mid-grey {
-  background-color: $mid-grey;
+%hover-button {
+  background-color: $hover-teal;
 }
 %background-color-dark-grey {
   background-color: $dark-grey;
@@ -269,7 +262,7 @@
   background-color: $primary-color;
 }
 %banner-text-color {
-  color: $banner-orange;
+  color: $background-grey;
 }
 
 // Opacity
@@ -370,8 +363,8 @@
 %text-align-center {
   text-align: center;
 }
-%text-shadow-white {
-  text-shadow: 2px 2px #FFFFFF;
+%text-shadow-black {
+  text-shadow: 2px 5px $black;
 }
 %line-height-normal {
   line-height: normal;
@@ -734,6 +727,9 @@
 %border-hide {
   border: 0;
 }
+%border-1-solid-grey {
+  border: 1px solid $background-grey;
+}
 %border-1-solid-black {
   border: 1px solid $black;
 }
@@ -758,7 +754,26 @@
 %box-shadow-none {
   box-shadow: none;
 }
-
+%box-shadow-inset {
+  box-shadow: inset -4px 2px 30px $background-grey;
+  -moz-box-shadow: inset -4px 2px 30px $background-grey;
+  -webkit-box-shadow: inset -4px 2px 30px $background-grey;
+}
+%box-shadow {
+  box-shadow:  10px 10px 5px $background-grey;
+  -moz-box-shadow:  10px 10px 5px $background-grey;
+  -webkit-box-shadow:  10px 10px 5px $background-grey;
+}
+%box-shadow-search {
+  box-shadow:  9px 6px 6px $background-grey;
+  -moz-box-shadow:  9px 6px 6px $background-grey;
+  -webkit-box-shadow:  9px 6px 6px $background-grey;
+}
+%box-shadow-login {
+  box-shadow:  12px 12px 4px $background-grey;
+  -moz-box-shadow:  12px 12px 4px $background-grey;
+  -webkit-box-shadow:  12px 12px 4px $background-grey;
+}
 // Background
 %background-none {
   background: none;
