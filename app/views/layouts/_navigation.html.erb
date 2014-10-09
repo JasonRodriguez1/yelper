@@ -4,26 +4,28 @@
   </ul>
   <section class="top-bar-section">
     <ul class="nav-links">
-      <li><%= link_to 'About', page_path('about') %></li>
-      <li><%= link_to 'Contact', page_path('contact') %></li>
+      <div id="main-nav-links">
+        <li><%= link_to 'About', page_path('about') %></li>
+        <li><%= link_to 'Contact', page_path('contact') %></li>
+      </div>
       <li class="has-form">
         <div class="row collapse">
           <div class="large-8 small-9 columns">
             <input type="text" placeholder="Find Stuff">
           </div>
           <div class="large-4 small-3 columns">
-            <a href="#" class="alert button expand">Search</a>
+            <a href="#" class="tiny round button">Search</a>
           </div>
         </div>
       </li>
     </ul>
           <ul class="right">
           <% if user_signed_in? %>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path, :class =>"round tiny button" %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class =>"round tiny button" %></li>
           <% else %>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <li><%= link_to 'Sign up', new_user_registration_path, :class =>"round tiny button" %></li>
+            <li><%= link_to 'Sign in', new_user_session_path, :class =>"round tiny button" %></li>
            <% end %>
           </ul>
   </section>
