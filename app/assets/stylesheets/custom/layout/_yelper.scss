@@ -19,22 +19,20 @@
   h2 {
     @extend %font-weight-bold;
     @extend %banner-text-color;
-    text-align: center;
+    @extend %text-align-center;
   }
   h3 {
-    color: red;
-    background-color: rgba(255, 255, 255, 0.66);
-    position: relative;
-    text-align: center;
-    right: 6px;
-    border-radius: 10px;
+    @extend %color-red;
+    @extend %background-opacity-white;
+    @extend %position-relative;
+    @extend %text-align-center;
+    @extend %border-radius-10px;
   }
 }
 
 .text-wrap {
   overflow-wrap: break-word;
   word-wrap: break-word; /* Firefox support */
-  position: absolute;
 }
 .homepage-img {
   margin-right: 12px;
@@ -48,4 +46,13 @@
 .restaurant-edit li {
   display: inline;
   margin-right: 3px;
+}
+.sidebar-content {
+  li {
+    list-style-type: none;
+  }
+  p img {
+    margin-top: 30px;
+    border-radius: 10px;
+  }
 }
