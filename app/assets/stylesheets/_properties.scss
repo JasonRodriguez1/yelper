@@ -215,12 +215,17 @@
 %color-aqua {
   color: $aqua;
 }
-
+%color-red {
+  color: red;
+}
 %color-dark-grey {
   color: $dark-grey;
 }
 %nav-hover-grey {
   background-color: rgba(255, 255, 255, 0.24);
+}
+%background-opacity-white {
+  background-color: rgba(255, 255, 255, 0.66);
 }
 %text-color-primary {
   color: $primary-color;
@@ -765,14 +770,14 @@
   -webkit-box-shadow:  10px 10px 5px $background-grey;
 }
 %box-shadow-search {
-  box-shadow:  9px 6px 6px $background-grey;
-  -moz-box-shadow:  9px 6px 6px $background-grey;
-  -webkit-box-shadow:  9px 6px 6px $background-grey;
+  box-shadow:  6px 4px 0px $background-grey;
+  -moz-box-shadow:  6px 4px 0px $background-grey;
+  -webkit-box-shadow:  6px 4px 0px $background-grey;
 }
 %box-shadow-login {
-  box-shadow:  12px 12px 4px $background-grey;
-  -moz-box-shadow:  12px 12px 4px $background-grey;
-  -webkit-box-shadow:  12px 12px 4px $background-grey;
+  box-shadow:  8px 11px 0px $background-grey;
+  -moz-box-shadow:  8px 11px 0px $background-grey;
+  -webkit-box-shadow:  8px 11px 0px $background-grey;
 }
 // Background
 %background-none {
