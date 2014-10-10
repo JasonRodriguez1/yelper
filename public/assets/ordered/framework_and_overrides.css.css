@@ -11,8 +11,8 @@ Error: Undefined variable: "$white".
 7:   font-family: 'Raleway', sans-serif;
 8:   font-weight: 100;
 9: }
-10: h1, h2, h3, h4, h5 {
-11:   font-family: 'Raleway', sans-serif;
+10: body a:hover {
+11:   @extend %link-hover-color;
 
 Backtrace:
 /Users/jasonrodriguez/Sites/yelper/app/assets/stylesheets/ordered/framework_and_overrides.css.scss:6
@@ -67,4 +67,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$white\".\A         on line 6 of /Users/jasonrodriguez/Sites/yelper/app/assets/stylesheets/ordered/framework_and_overrides.css.scss\A \A 1: // Author: Jason Rodriguez\A 2: \A 3: // import the framework\A 4: @import 'foundation';\A 5: a {\A 6:   color: $white;\A 7:   font-family: 'Raleway', sans-serif;\A 8:   font-weight: 100;\A 9: }\A 10: h1, h2, h3, h4, h5 {\A 11:   font-family: 'Raleway', sans-serif;"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 6 of /Users/jasonrodriguez/Sites/yelper/app/assets/stylesheets/ordered/framework_and_overrides.css.scss\A \A 1: // Author: Jason Rodriguez\A 2: \A 3: // import the framework\A 4: @import 'foundation';\A 5: a {\A 6:   color: $white;\A 7:   font-family: 'Raleway', sans-serif;\A 8:   font-weight: 100;\A 9: }\A 10: body a:hover {\A 11:   @extend %link-hover-color;"; }
