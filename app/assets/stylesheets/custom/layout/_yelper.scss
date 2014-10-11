@@ -10,7 +10,6 @@
   @extend %right-0;
   @extend %bottom-0;
   @extend %width-50-percent;
-  @extend %height-200;
   @extend %padding-10;
   @extend %position-relative;
   @extend %overflow-hidden;
@@ -22,15 +21,21 @@
     @extend %text-align-center;
   }
   h3 {
-    @extend %color-red;
-    @extend %background-opacity-white;
+    @extend %color-black;
     @extend %position-relative;
     @extend %text-align-center;
     @extend %border-radius-10px;
   }
 }
-
+.headline {
+  h1 {
+    color: black;
+    @extend %text-shadow-teal;
+  }
+  text-align: center;
+}
 .text-wrap {
+  @extend %background-opacity-white;
   overflow-wrap: break-word;
   word-wrap: break-word; /* Firefox support */
 }
@@ -54,5 +59,33 @@
   p img {
     margin-top: 30px;
     border-radius: 10px;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  .large-8-sidebar {
+    width: 100%;
+  }
+  .large-4-sidebar {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .large-8-sidebar {
+    width: 66.66667%;
+  }
+  .large-4-sidebar {
+    width: 33.33333%;
+  }
+}
+.listing-show {
+  a {
+    padding: 5px;
+  }
+}
+.instruction {
+   h4 {
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 5px;
   }
 }
