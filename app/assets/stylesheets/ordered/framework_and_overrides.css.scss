@@ -56,3 +56,6 @@ main {
 .contain-to-grid .top-bar {
   max-width: 100%;
 }
+.button {
+    @extend %background-opacity-white;
+}
