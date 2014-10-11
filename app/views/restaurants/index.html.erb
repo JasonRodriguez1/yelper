@@ -1,18 +1,33 @@
-<div class="small-12 large-12 columns">
-  <h5>Cool spots are all around, check them out!</h5>
+<div class="small-12 medium-12 large-12 headline columns">
+  <% if user_signed_in? %>
+    <h1> Great! Now that we are all signed up, it's time to check out some restaurants!</h1>
+    <div class="instruction">
+    <div class="large-6 columns">
+      <h4>To the lower left, there you will find the "Restaurants" list. Let's go ahead and choose an entry from the list and click it's "show" button to view the reviews/rating for that particular spot! &#8601;</h4>
+    </div>
+    <div class="large-6 columns">
+      <h4>To your right is the sidebar. I created this to demonstrate my familiarity with nested grids. On this page we have an 8/4 setup with a reversed 4/8 in the 4 column.&#8600;</h4>
+    </div>
+    </div>
+    <% else %>
+      <h1>Welcome to Yelper! Follow along with the grey instruction boxes scattered around the site, they will give you a guided tour of my site and what it can do. Enjoy!</h1>
+      <div class="instruction">
+        <h4>Our first step is going to be creating a user account. Please make one by clicking the "Sign Up" link in the top left corner! &#8599;</h4>
+      </div>
+  <% end %>
 </div>
-<div class="small-9 large-9 columns">
+<div class="small-12 medium-9 large-9 columns">
   <%= render 'layouts/banner' %>
   <h1>Restaurants</h1>
   <hr>
   <% @restaurants.each do |restaurant| %>
     <div class="row">
-      <div class="small-4 large-4 columns">
+      <div class="large-3 columns">
           <div class="homepage-img">
             <p><%= image_tag restaurant.image %></p>
           </div>
       </div>
-      <div class="small-8 large-8 columns">
+      <div class="large-9 columns">
           <ul class="restaurant-details">
             <li><%= restaurant.name %></li>
             <li><%= restaurant.address %></li>
@@ -31,11 +46,11 @@
   <br>
   <%= link_to 'New Restaurant', new_restaurant_path, :class => "tiny round button" %>
 </div>
-<div class="large-3 columns sidebar-content">
+<div class="small-12 medium-3 large-3 columns sidebar-content">
   <h3>Sidebar Stuff</h3>
   <hr>
   <div class="row">
-    <div class="large-8 columns">
+    <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
         <ul>
@@ -43,13 +58,13 @@
         </ul>
        </p>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 large-4-sidebar columns">
       <p><%= image_tag"http://lorempixel.com/200/200/cats/3/"  %></p>
     </div>
   </div>
   <hr>
   <div class="row">
-    <div class="large-8 columns">
+    <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
         <ul>
@@ -57,13 +72,13 @@
         </ul>
        </p>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 large-4-sidebar columns">
       <p><%= image_tag"http://lorempixel.com/200/200/cats/4/"  %></p>
     </div>
   </div>
   <hr>
   <div class="row">
-    <div class="large-8 columns">
+    <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
         <ul>
@@ -71,13 +86,13 @@
         </ul>
        </p>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 large-4-sidebar columns">
       <p><%= image_tag"http://lorempixel.com/200/200/cats/5/"  %></p>
     </div>
   </div>
   <hr>
   <div class="row">
-    <div class="large-8 columns">
+    <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
         <ul>
@@ -85,7 +100,7 @@
         </ul>
        </p>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 large-4-sidebar columns">
       <p><%= image_tag"http://lorempixel.com/200/200/cats/6/"  %></p>
     </div>
   </div>
