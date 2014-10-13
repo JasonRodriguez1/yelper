@@ -12,7 +12,7 @@ gem 'sprockets', '~>2.11.0'
 gem 'uglifier'
 # Add Compass to the project
 gem 'compass'
-gem 'compass-rails'
+gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'zurb-foundation'
 # Add access to foundation classes
 gem 'foundation-rails'
@@ -36,6 +36,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'figaro'
 gem 'mini_magick'
+gem 'jquery-turbolinks'
 gem 'rails_12factor', group: :production
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
