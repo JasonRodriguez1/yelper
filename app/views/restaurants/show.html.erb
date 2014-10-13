@@ -4,22 +4,25 @@
       <div id="before-review">
         <h1> Nice work! Here is my restaurant show page.</h1>
       </div>
-<!--       <div id="after-review">
+      <div id="after-review">
         <h1> Congrats! You have been walked through my app. I hope you had as much fun exploring this app as I have creating it. I hope you will consider hiring me so I can keep building stuff because I love to do it and I am learning so much more every day!</h1>
         <h4>I can be reached either via email <a href="mailto:jason@jasonrodriguez.net?Subject=Portfolio%20feedback" target="_top">
 here</a> or my cell 503-875-6574.</h4>
-      </div> -->
+      </div>
       <div class="instruction">
       <div class="large-6 columns">
         <h4>In the left column, you will find restaurant details. Let's go to the next instruction box below to investigate further.. &#8619;</h4>
         </div>
         <div class="large-6 columns">
           <div id="before-review">
-            <h4>In the right column, you will find the restaurant's rating and reviews! I placed them in a table &#8620;</h4>
+            <h4>In the right column, you will find the restaurant's rating and reviews!  &#8620;</h4>
           </div>
- <!--          <div id="after-review">
-            <h4>In the right column, you can see your new reviews is displayed at the top of the list! I did this using the .order method and "created_at" with the DESC attribute &#8620;</h4>
-          </div> -->
+          <div>
+            <h4 id="before-review">Once you have writen a review, click <a href="#">Here</a> to wrap up the tour!</h4>
+          </div>
+          <div id="after-review">
+            <h4>In the right column, you can see your new review is displayed at the top of the list! I did this using the .order method and "created_at" with the DESC attribute &#8620;</h4>
+          </div>
         </div>
       </div>
     <% end %>
@@ -63,9 +66,20 @@ here</a> or my cell 503-875-6574.</h4>
   <% else %>
   <br>
     <table class="table">
+      <thead>
+        <tr>
+        <ht class="medium-3 columns"></ht>
+        <ht class="medium-9 columns"></ht>
+      </thead>
       <tbody>
         <% @reviews.each do |review| %>
           <tr>
+            <td>
+              <h4>
+                <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+              </h4>
+              <p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
+            </td>
             <td>
               <div class="star-rating" data-score= <%= review.rating %> ></div>
               <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
