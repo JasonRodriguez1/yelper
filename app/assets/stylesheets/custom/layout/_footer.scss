@@ -1,14 +1,14 @@
 // Author: Jason Rodriguez
+//
 /*** Footer Layout styles ***/
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+clear: both;
+}
 .footer {
-  clear: both;
   font-family: "raleway";
   font-weight: bold;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
-.footer-img img {
-  margin-bottom: 45px;
-}
-/*** Start Footer Layout block styles ***/
