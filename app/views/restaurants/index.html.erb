@@ -1,27 +1,23 @@
 <div class="small-12 medium-12 large-12 headline columns">
   <% if user_signed_in? %>
-    <h1> Great! Now that we are all signed up, it's time to check out some restaurants!</h1>
     <div class="instruction">
-    <div class="large-6 columns">
-      <h4>To the lower left, there you will find the "Restaurants" list. Let's go ahead and choose an entry from the list and click it's "show" button to view the reviews/rating for that particular spot! &#8601;</h4>
+      <h4>Great! Now that we are all signed up, it's time to check out some restaurants!</h4>
     </div>
-    <div class="large-6 columns">
-      <h4>To your right is the sidebar. I created this to demonstrate my familiarity with nested grids. On this page we have an 8/4 setup with a reversed 4/8 in the 4 column.&#8600;</h4>
-    </div>
-    </div>
-    <% else %>
-      <h1>Welcome to Yelper! Follow along with the grey instruction boxes scattered around the site, they will give you a guided tour of my site and what it can do. Enjoy!</h1>
-      <div class="instruction">
-        <h4>Our first step is going to be creating a user account. Please make one by clicking the "Sign Up" link in the top right corner! &#8599;</h4>
-      </div>
+  <% else %>
+    <h1>Welcome to Yelper!</h1>
+    <div class="instruction">
+      <h4> Our first step is going to be creating a user account. Please make one by clicking the "Sign Up" link in the top right corner! &#8599;
+      </h4>
+   </div>
   <% end %>
 </div>
+<hr>
 <div class="small-12 medium-9 large-9 columns">
   <%= render 'layouts/banner' %>
-  <h1>Restaurants</h1>
+  <h1 title="Here we have a list of all the restaurants on this site. On the bottom of each listing is CRUD functionality defined in my restaurant controller by creating an instance of the restaurant model and attaching methods based on what I would like to do.... For example, in order for me to edit an entry, I allow the edit button to trigger the restaurant controller's update function where I overwrite the current instance's parameters like so: '@restaurant = Restaurant.new(restaurant_params)'. Restaurant_params is defined in a private function to ensure no malicious code gets entered. On the bottom of the list there is a button to create a new restaurant of your choosing. In order for me to display the list of restaurants, I simply assign a variable in the restaurant controller's index function that utilizes the '.all' method like so: '@restaurants = Restaurant.all'. From there, I use the  '@restaurants' variable in my view to iterate through each listing using an 'each do' method.">Restaurants</h1>
   <hr>
   <% @restaurants.each do |restaurant| %>
-    <div class="row">
+    <div class="row" title="Each listing is it's own grid with a 4/8 column split, all within the 9 column of the landing page's main grid. The other 3 columns of the main grid are allocated to the sidebar.">
       <div class="large-3 columns">
           <div class="homepage-img">
             <p><%= image_tag restaurant.image %></p>
@@ -35,7 +31,7 @@
             <li><%= link_to restaurant.website, restaurant.website %></li>
           </ul>
           <ul class="restaurant-edit">
-            <li><%= link_to 'Show', restaurant %></li>
+            <li title="Click here after you finish checking out this page. It will take you to the restaurant show page for more details and a link to create your own review!"><%= link_to 'Show', restaurant %></li>
             <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
             <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
@@ -49,13 +45,10 @@
 <div class="small-12 medium-3 large-3 columns sidebar-content">
   <h3>Sidebar Stuff</h3>
   <hr>
-  <div class="row">
+  <div class="row" title="I created this sidebar to demonstrate my familiarity with nested grids. Here we have a 4/8 grid of columns nested within the 3 column side of  the main grid. The other 9 are allocated to the restaurant listings. I have intentionally laid this grid out to be in a reverse orientation of its parent and restaurant listings.">
     <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
-        <ul>
-          <li><a href="#">Odd Future cliche church-key.</a></li>
-        </ul>
        </p>
     </div>
     <div class="large-4 large-4-sidebar columns">
@@ -63,13 +56,10 @@
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row" title="I created this sidebar to demonstrate my familiarity with nested grids. Here we have a 4/8 grid of columns nested within the 4 column side of it's parent grid. I have intentionally laid this grid out to be in a reverse orientation of its parent which is an 8/4 column layout.">
     <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
-        <ul>
-          <li><a href="#">Odd Future cliche church-key.</a></li>
-        </ul>
        </p>
     </div>
     <div class="large-4 large-4-sidebar columns">
@@ -77,13 +67,10 @@
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row" title="I created this sidebar to demonstrate my familiarity with nested grids. Here we have a 4/8 grid of columns nested within the 4 column side of it's parent grid. I have intentionally laid this grid out to be in a reverse orientation of its parent which is an 8/4 column layout.">
     <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
-        <ul>
-          <li><a href="#">Odd Future cliche church-key.</a></li>
-        </ul>
        </p>
     </div>
     <div class="large-4 large-4-sidebar columns">
@@ -91,13 +78,10 @@
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row" title="I created this sidebar to demonstrate my familiarity with nested grids. Here we have a 4/8 grid of columns nested within the 4 column side of it's parent grid. I have intentionally laid this grid out to be in a reverse orientation of its parent which is an 8/4 column layout.">
     <div class="large-8 large-8-sidebar columns">
       <h5>Lorem.</h5>
       <p>Deep v literally farm-to-table dreamcatcher pop-up mumblecore, pork belly 8-bit VHS plaid raw denim Neutra.
-        <ul>
-          <li><a href="#">Odd Future cliche church-key.</a></li>
-        </ul>
        </p>
     </div>
     <div class="large-4 large-4-sidebar columns">
