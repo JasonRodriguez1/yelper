@@ -1,44 +1,18 @@
-<div class="row">
-  <div class="large-12 columns headline">
-    <% if user_signed_in? %>
-      <div id="before-review">
-        <h1> Nice work! Here is my restaurant show page.</h1>
-      </div>
-      <div id="after-review">
-        <h1> Congrats! You have been walked through my app. I hope you had as much fun exploring this app as I have creating it. I hope you will consider hiring me so I can keep building stuff because I love to do it and I am learning so much more every day!</h1>
-        <h4>I can be reached either via email <a href="mailto:jason@jasonrodriguez.net?Subject=Portfolio%20feedback" target="_top">
-here</a> or my cell 503-875-6574.</h4>
-      </div>
-      <div class="instruction">
-      <div class="large-6 columns">
-        <h4>In the left column, you will find restaurant details. Let's go to the next instruction box below to investigate further.. &#8619;</h4>
-        </div>
-        <div class="large-6 columns">
-          <div id="before-review">
-            <h4>In the right column, you will find the restaurant's rating and reviews!  &#8620;</h4>
-          </div>
-          <div>
-            <h4 id="before-review">Once you have writen a review, click <a href="#">Here</a> to wrap up the tour!</h4>
-          </div>
-          <div id="after-review">
-            <h4>In the right column, you can see your new review is displayed at the top of the list! I did this using the .order method and "created_at" with the DESC attribute &#8620;</h4>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<div class="medium-8 large-8 columns listing-show">
-  <p id="notice"><%= notice %></p>
+<div class="large-12 columns headline">
+  <% if user_signed_in? %>
+    <h1 class="before-review" title="What I did here for the restaurant show page is gave it a grid consisting of a 4/8 grid split. In the 4 column, I gave it 12 a column layout so the data would stack veritcally. In the 8 column area, I generated a 3/9 column grid. The 3 column grid has a 12 column layout for vertically stacking the author/date, while the 9 column is full width placement for rating stars and review stacked underneath.">Restaurant Reviews</h1>
+  <% else %>
+    <h1 class="before-review">You need to create a user account first so you can be able to write a review.</h1>
+  <% end %>
+</div>
+<div class="small-12 medium-4 large-4 columns listing-show">
+  <!-- <p id="notice"><%= notice %></p> -->
   <%= image_tag @restaurant.image_url %>
   <h2>
     <%= @restaurant.name %>
   </h2>
   <div class="star-rating" data-score= <%= @avg_rating %> ></div>
-  <p><%= "#{@reviews.length} reviews" %></p>
-  <div class="instruction">
-    <h4>&#65514; Directly above, you will see a count of how many reviews were written and the overall averaged star rating for the restaurant.</h4>
-    <h4> This was accomplished by using the .length method on @reviews and the .round method in the restaurant controller. &#65514;</h4>
-</div>
+  <p title="Here, I have a running tally of all submitted reviews being displayed using string interpolation on the result. On top of the tally I am also displaying the averaged result of all reviews in the format of stars. I used a jQuery plugin called 'raty', to do this. I accomplished this by setting a variable to the calculated average of all the reviews. I had to chain methods for this one. I used the '.average' method with the ':rating' parameter as a parameter. Then I used the '.round' method to average the result with 2 as a parameter there for .5 (for half stars accuracy). It looks like this: '@avg_rating = @reviews.average(:rating).round(2)'. From there, I was able to use the 'avg_rating' variable to display a value for the 'data'score' attribute in raty."><%= "#{@reviews.length} reviews" %></p>
   <p>
     <strong>Address:</strong>
     <%= @restaurant.address %>
@@ -53,43 +27,43 @@ here</a> or my cell 503-875-6574.</h4>
     <strong>Website:</strong>
     <%= link_to @restaurant.website, @restaurant.website %>
   </p>
-  <div class="instruction">
-    <h4>&#65516; Now, it's your turn! Click the "Write a Review" button below and Let the world know what your favorite or most disliked item at this type of restaurant is. Then rate accordingly. &#65516;</h4>
+  <div class="listing-edit-links">
+  <p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+  <p><%= link_to 'Back', restaurants_path %></p>
+  <p title=" The 'write a review' button redirects you to a form partial (shared view) and this form allows the creation of a new review in the database"><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
+  </p>
   </div>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
-<%= link_to 'Back', restaurants_path %>
-<%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
 </div>
-<div class="medium-4 large-4 columns">
+<div class="small-12 medium-8 large-8 columns">
+<hr>
+<br>
   <% if @reviews.blank? %>
-    <h3>No reviews yet. Be the first to write one!</h3>
+    <div class="large-12 columns">
+      <h3>No reviews yet. Be the first to write one!</h3>
+    </div>
   <% else %>
-  <br>
-    <table class="table">
-      <thead>
-        <tr>
-        <ht class="medium-3 columns"></ht>
-        <ht class="medium-9 columns"></ht>
-      </thead>
-      <tbody>
-        <% @reviews.each do |review| %>
-          <tr>
-            <td>
-              <h4>
-                <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
-              </h4>
-              <p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
-            </td>
-            <td>
-              <div class="star-rating" data-score= <%= review.rating %> ></div>
-              <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @reviews.each do |review| %>
+      <div class="row">
+        <div class="large-3 columns" title="Here I used string interpolation to pull the name of the first name of the user who authored the current review specifically, by calling first_name on review whch is hte current instance of the entry we want to manipulate. Then we also grab the first letter of their last name (capitalized) using the first position in the last name's array of letters and stuff all that into a 12 column so it will stack vertically. It looks like this: '#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}.' Last, I stringify'd time for the date using the 'created_at' method just like with when defining the order of the listings but this time with strftime method to make the created date easily readable. It looks like this: review.created_at.strftime('%-m/%-d/%-y')' ">
+          <div class="large-12 columns">
+            <h4>
+              <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+            </h4>
+          </div>
+          <div class="large-12 columns">
+            <p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
+          </div>
+        </div>
+        <div class="large-9 columns">
+          <div class="star-rating" data-score= <%= review.rating %> ></div>
+          <br>
+          <p title="Here is where the reviews populate. Each review generates as it's own grid through an 'each do' iteration in the erb of the show page. The reviews are listed from most recent to oldest. I did this by chaining methods. First, I created a variable that looked through the index of reviews and sorted with the '.order' method using the criteria given by 'created_at' with DESC as it's attribute. It looks like this: @reviews = Review.where(restaurant_id: @restaurant.id).order('created_at DESC')."><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+          </p>
+        </div>
+    </div>
+    <hr>
   <% end %>
-</div>
+  <% end %>
 </div>
 <script>
     $('.star-rating').raty({
