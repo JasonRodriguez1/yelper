@@ -89,3 +89,41 @@
     padding: 5px;
   }
 }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: "raleway";
+    box-shadow: 0 0 7px black;
+    width: 30%;
+    overflow: hidden;
+    background: $highlight-grey;
+    border: 2px solid $teal;
+  }
+.listing-edit-links p {
+  display: inline;
+}
+.tagline {
+  text-align: center;
+}
+.form-inputs {
+  input {
+    border-radius: 10px;
+    width: 50%;
+  }
+  input#user_remember_me.boolean.optional {
+    width: 2%
+  }
+  button {
+    border-radius: 10px;
+  }
+}
+#new_restaurant input.optional,
+.restaurant-form input.optional {
+  width: 50%;
+  border-radius: 10px;
+}
+#review_comment {
+  border-radius: 5px;
+}
