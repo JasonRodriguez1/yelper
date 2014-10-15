@@ -1,11 +1,11 @@
 <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.error_notification %>
   <div class="instruction">
-    <h4>&#65516; Now, hover over the stars and click the desired rating. Then write your review and submit it. &#65516;</h4>
+    <h4>&#65516; Hover over the stars and click the desired rating. Then write your review and submit it. &#65516;</h4>
   </div>
   <div class="form-inputs">
     <div id="star-rating"></div>
-    <%= f.input :comment %>
+    <%= f.input :comment, :class => "review-comment" %>
   </div>
 <br>
   <div class="form-actions review-create">
