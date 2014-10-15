@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 // jQuery UI Tooltip styling
 $( document ).tooltip({
-      track: true,
+      // track: true,
       using: function( position, feedback ) {
         $( this ).css( position );
         $( "<div>" )
