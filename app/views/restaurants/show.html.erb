@@ -28,7 +28,9 @@
     <%= link_to @restaurant.website, @restaurant.website %>
   </p>
   <div class="listing-edit-links">
-  <p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+  <% if user_signed_in? && current_user.admin? %>
+    <p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+  <% end %>
   <p><%= link_to 'Back', restaurants_path %></p>
   <p title=" The 'write a review' button redirects you to a form partial (shared view) and this form allows the creation of a new review in the database"><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
   </p>
@@ -48,6 +50,13 @@
           <div class="large-12 columns">
             <h4>
               <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+              <% if user_signed_in? %>
+                <% if (review.user == current_user) || (current_user.admin?) %>
+                <br>
+                  <%= link_to "Edit", edit_restaurant_review_path(@restaurant, review) %>
+                  <%= link_to "Delete", restaurant_review_path(@restaurant, review), method: :delete %>
+                <% end %>
+              <% end %>
             </h4>
           </div>
           <div class="large-12 columns">
