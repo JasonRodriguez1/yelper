@@ -25,22 +25,25 @@
       </div>
       <div class="large-9 columns">
           <ul class="restaurant-details">
-            <li><%= restaurant.name %></li>
+            <li><%= link_to restaurant.name, restaurant %></li>
             <li><%= restaurant.address %></li>
             <li><%= restaurant.phone %></li>
             <li><%= link_to restaurant.website, restaurant.website %></li>
           </ul>
           <ul class="restaurant-edit">
-            <li title="Click here after you finish checking out this page. It will take you to the restaurant show page for more details and a link to create your own review!"><%= link_to 'Show', restaurant %></li>
-            <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
-            <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% if user_signed_in? && current_user.admin? %>
+              <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+              <li><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
           </ul>
       </div>
       <hr>
     </div>
   <% end %>
-  <br>
-  <%= link_to 'New Restaurant', new_restaurant_path, :class => "tiny round button" %>
+  <% if user_signed_in? && current_user.admin? %>
+    <br>
+    <%= link_to 'New Restaurant', new_restaurant_path, :class => "tiny round button" %>
+  <% end %>
 </div>
 <div class="small-12 medium-3 large-3 columns sidebar-content">
   <h3>Sidebar Stuff</h3>
