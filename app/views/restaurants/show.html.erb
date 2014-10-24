@@ -34,6 +34,15 @@
   <p><%= link_to 'Back', restaurants_path %></p>
   <p title=" The 'write a review' button redirects you to a form partial (shared view) and this form allows the creation of a new review in the database"><%= link_to 'Write a Review', new_restaurant_review_path(@restaurant) %>
   </p>
+  <br>
+  <br>
+  <iframe
+  width="230"
+  height="230"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCkmpG1lopqtv0i6Q-IJfTCz1vjuEiRI9o
+    &q=<%= @restaurant.address.parameterize %>&zoom=14">
+</iframe>
   </div>
 </div>
 <div class="small-12 medium-8 large-8 columns">
